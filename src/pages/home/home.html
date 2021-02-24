@@ -1,14 +1,66 @@
 <ion-header>
   <ion-navbar>
-    <ion-title>
-      Ionic Blank
+    <ion-title style="padding-left: 40px; padding-right: 40px;">
+      Welcome to GettingBetterApp
     </ion-title>
   </ion-navbar>
 </ion-header>
 
 <ion-content padding>
-  The world is your oyster.
-  <p>
-    If you get lost, the <a href="http://ionicframework.com/docs/v3">docs</a> will be your guide.
-  </p>
+  Please answer the questions honestly
+
+  <section>
+    <ion-item>
+      <ion-label position="stacked">Question 1</ion-label>
+      <ion-input minlength="5" type="text" [(ngModel)]="questionOne"></ion-input>
+    </ion-item>
+    <button ion-button (click)="answerQuestion(1)" color="secondary" class="saveButton" *ngIf="!questionsAnswered.one">
+      Save
+    </button>
+  </section>
+
+  <section *ngIf="questionsAnswered.one">
+    <ion-item>
+      <ion-label position="stacked">Question 2</ion-label>wo
+      <ion-input minlength="5" type="text" [(ngModel)]="questionTwo"></ion-input>
+    </ion-item>
+    <button ion-button (click)="answerQuestion(2)" color="secondary" class="saveButton" *ngIf="!questionsAnswered.two">
+      Save
+    </button>
+  </section>
+
+  <section *ngIf="questionsAnswered.two">
+    <ion-item>
+      <ion-label position="stacked">Question 3</ion-label>
+      <ion-input minlength="5" type="text" [(ngModel)]="questionThree"></ion-input>
+    </ion-item>
+    <button ion-button (click)="answerQuestion(3)" color="secondary" class="saveButton" *ngIf="!questionsAnswered.three">
+      Save
+    </button>
+  </section>
+
+  <section *ngIf="questionsAnswered.three">
+    <ion-item>
+      <ion-label position="stacked">Question 4</ion-label>
+      <ion-input minlength="5" type="text" [(ngModel)]="questionFour"></ion-input>
+    </ion-item>
+    <button ion-button (click)="answerQuestion(4)" color="secondary" class="saveButton" *ngIf="!questionsAnswered.four">
+      Save
+    </button>
+  </section>
+
+  <section *ngIf="questionsAnswered.four">
+    <ion-item>
+      <ion-label position="stacked">Question 5</ion-label>
+      <ion-input minlength="5" type="text" [(ngModel)]="questionFive"></ion-input>
+    </ion-item>
+    <button ion-button (click)="answerQuestion(5)" color="secondary" class="saveButton" *ngIf="!questionsAnswered.five">
+      Save
+    </button>
+  </section>
+
+  <button ion-button (click)="submitAnswers()" color="secondary" class="saveButton" *ngIf="questionsAnswered.five">
+    Submit Answers
+  </button>
+
 </ion-content>
