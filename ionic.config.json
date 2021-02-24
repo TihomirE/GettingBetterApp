@@ -1,0 +1,7 @@
+{
+  "name": "GettingBetterApp",
+  "integrations": {
+    "capacitor": {}
+  },
+  "type": "ionic-angular"
+}
